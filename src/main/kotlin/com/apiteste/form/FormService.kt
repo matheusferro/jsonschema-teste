@@ -22,6 +22,23 @@ class FormService(val formValidator: FormValidator, val mapper: ObjectMapper){
         //val resp = mapper.createParser(formsModel.jsonSchema)
         val resp2 = mapper.readTree(formsModel.jsonSchema)
         iteradeJSONNode(resp2)
+        /**
+         * iteradeJSONNode esta printando:
+         *
+        title:""
+        text_field:""
+        sessions:[
+            title:""
+            nome_completo:{
+                title:""
+                text_field:""
+                mandatory:""
+            endereco:{
+                title:""
+                text_field:""
+                mandatory:""
+         */
+
 
         return ""
     }
