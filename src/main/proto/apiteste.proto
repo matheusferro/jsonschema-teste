@@ -7,14 +7,15 @@ option objc_class_prefix = "HLW";
 
 package com.apiteste;
 
-service ApitesteService {
-  rpc send (ApitesteRequest) returns (ApitesteReply) {}
+service FormService {
+  rpc sendForm (SendFormRequest) returns (SendFormResponse) {}
 }
 
-message ApitesteRequest {
+message SendFormRequest {
   string name = 1;
+  string json_form = 2;
 }
 
-message ApitesteReply {
+message SendFormResponse {
   string message = 1;
 }

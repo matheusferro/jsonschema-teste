@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://json-schema.org/draft/2020-12/output/schema",
+  "$dynamicAnchor": "meta",
+  "$vocabulary": {
+    "https:://example.com/vocab/example-forms": true
+  },
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "text_field": {
+      "type": "string"
+    },
+    "sessions": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "nome_completo": {
+              "type": "object",
+              "component_type": "textArea",
+              "properties": {
+                "title":{
+                  "type": "string"
+                },
+                "text_field": {
+                  "type": "string",
+                  "minLength": 3
+                },
+                "mandatory": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "title",
+                "text_field",
+                "mandatory"
+              ]
+            },
+            "endereco": {
+              "type": "object",
+              "component_type": "textArea",
+              "properties": {
+                "title":{
+                  "type": "string"
+                },
+                "text_field": {
+                  "type": "string",
+                  "minLength": 3
+                },
+                "mandatory": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "title",
+                "text_field",
+                "mandatory"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "title",
+    "text_field",
+    "sessions"
+  ]
+}
