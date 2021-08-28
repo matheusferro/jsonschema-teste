@@ -39,10 +39,19 @@ class FormValidator {
     fun validate(schemaFileMeta: String, formJson: String): List<String>{
         val schema = getJsonSchemaFromStringContent(schemaFileMeta)
         val node = getJsonNodeFromStringContent(formJson)
+        val  errors2 = schema.validateAndCollect(node)
+        val  errors: Set<ValidationMessage> = schema.validate(node)
 
-        val  errors = schema.validate(node)
 
         return errors.map {
+            val fieldSpl = it.message.split(".")
+
+            println(fieldSpl)
+
+            val msgSpl = it.message.split(": ")
+            println("${fieldSpl[fieldSpl.size-2]}:  ${msgSpl[1]}  ")
+
+
             schema.getRefSchemaNode("#/messages/${it.path}.${it.type}")?.textValue() ?: it.message
         }
     }

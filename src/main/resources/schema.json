@@ -8,10 +8,12 @@
   "type": "object",
   "properties": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "minLength": 20
     },
     "text_field": {
-      "type": "string"
+      "type": "string",
+      "minLength": 15
     },
     "sessions": {
       "type": "array",
@@ -31,7 +33,7 @@
                 },
                 "text_field": {
                   "type": "string",
-                  "minLength": 3
+                  "minLength": 20
                 },
                 "mandatory": {
                   "type": "boolean"
@@ -52,7 +54,7 @@
                 },
                 "text_field": {
                   "type": "string",
-                  "minLength": 3
+                  "minLength": 190
                 },
                 "mandatory": {
                   "type": "boolean"

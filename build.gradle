@@ -15,6 +15,7 @@ repositories {
 }
 
 micronaut {
+    runtime("netty")
     testRuntime("junit5")
     processing {
         incremental(true)
@@ -34,9 +35,9 @@ dependencies {
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-    testImplementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-http-client")
 
-    implementation("com.networknt:json-schema-validator:1.0.42")
+    implementation("com.networknt:json-schema-validator:1.0.57")
 
     implementation("com.google.code.gson:gson:2.8.7")
 

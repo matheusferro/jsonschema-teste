@@ -18,10 +18,11 @@ class FormService(val formValidator: FormValidator, val mapper: ObjectMapper){
     private val BOOLEAN: String = "boolean"
 
     fun submitForm(@Valid formsModel: FormModel): String{
-        //return formValidator.validate(formsModel.jsonSchema, formsModel.jsonForm).toString()
+        return formValidator.validate(formsModel.jsonSchema, formsModel.jsonForm).toString()
+
         //val resp = mapper.createParser(formsModel.jsonSchema)
-        val resp2 = mapper.readTree(formsModel.jsonSchema)
-        iteradeJSONNode(resp2)
+        //val resp2 = mapper.readTree(formsModel.jsonSchema)
+        //iteradeJSONNode(resp2)
         /**
          * iteradeJSONNode esta printando:
          *
@@ -40,7 +41,7 @@ class FormService(val formValidator: FormValidator, val mapper: ObjectMapper){
          */
 
 
-        return ""
+//        return ""
     }
 
     fun iteradeJSONNode(resp2: JsonNode){
